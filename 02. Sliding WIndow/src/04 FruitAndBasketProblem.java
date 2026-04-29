@@ -73,6 +73,6 @@ class FruitAndBasketProblem {
             int len = high - low + 1;
             res = Math.max(res, len);
         }
-        return  res;
+        return  res==Integer.MIN_VALUE ? -1 : res;
     }
 }
