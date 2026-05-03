@@ -43,12 +43,55 @@ class MinimumWindowSubstring {
     }
 
     public static String minimumWindowSubstring(String s, String t){
+        //necessary variables
+        int low = 0;
+        int minLen = Integer.MAX_VALUE ; // here the length of the sub string will be stored
+        int startIdx = 0;
+        // create two arrays
+        int[] have = new int[255];
+        int[] need = new int[255];
+        for (char c:t.toCharArray()) {
+           need[c]++;
+        }
+//        System.out.println("Array need");
+//        for (int i = 0; i < need.length; i++) {
+//            System.out.println(need[i]);
+//        }
 
-        return "";
+        for (int high = 0; high < s.length(); high++) {
+            //get the character
+            have[s.charAt(high)]++;
+
+            // Shrink the window as long as it remains valid
+            while(isValid(have,need)){
+                int currentWindowLen = high - low + 1;
+
+                // store the minLen and startIndex only when the min length of the substring is obtained
+                if (currentWindowLen < minLen) {
+                    minLen = currentWindowLen;
+                    startIdx = low;
+                }
+
+                // Remove the character at 'low' and move forward
+                have[s.charAt(low)]--;
+                low++;
+            }
+        }
+
+        // Safety check: if minLen is still MAX_VALUE, no window was found
+        if (minLen == Integer.MAX_VALUE) {
+            return "";
+        }
+        return s.substring(startIdx,startIdx+minLen);
+
     }
 
     public static boolean isValid(int[] have, int[] need){
-
+        for (int i = 0; i < need.length; i++) {
+            if(need[i] > have[i]){
+                return false;
+            }
+        }
         return true;
     }
 }
