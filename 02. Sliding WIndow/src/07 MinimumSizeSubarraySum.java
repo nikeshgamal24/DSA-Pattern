@@ -34,7 +34,24 @@ class MinimumSizeSubarraySum {
     }
 
     public static int minimumSizeSubarraySum(int[] array, int target){
+        int low = 0;
+        int minlen = Integer.MAX_VALUE;
+        int sum = 0;
 
-        return 0;
+        for (int high = 0; high < array.length; high++) {
+            sum += array[high];
+
+            while(sum >= target){
+                int currentWindowLen = high - low + 1;
+                low ++;
+                minlen = Math.min(minlen, currentWindowLen);
+                sum = sum - array[low-1];
+            }
+
+        }
+        if(minlen==Integer.MAX_VALUE){
+            return 0;
+        }
+        return minlen;
     }
 }
