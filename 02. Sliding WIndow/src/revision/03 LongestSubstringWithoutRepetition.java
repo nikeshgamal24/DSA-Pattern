@@ -22,6 +22,8 @@
 
 package revision;
 
+import java.util.HashMap;
+
 class LongestSubstringWithoutRepetition {
     public static void main(String[] args){
         String s1 = "abcabcbb";
@@ -33,7 +35,7 @@ class LongestSubstringWithoutRepetition {
         System.out.println("Output 1: " + longestSubstringWithoutRepetition(s3));
 
     }
-
+//  Approach 1: Using Array
     public static int longestSubstringWithoutRepetition(String s){
         int low = 0;
         int maxLen = -1;
@@ -42,17 +44,17 @@ class LongestSubstringWithoutRepetition {
         int[] arr = new int[255];
 
         for (int high = 0; high < s.length(); high++) {
-            arr[s.charAt(high)]++;
-            int maxFreq = maxFreq(arr);
-            while(maxFreq > 1){
-                arr[s.charAt(low)]--;
+            char rightChar = s.charAt(high);
+            arr[rightChar]++;
+//            int maxFreq = maxFreq(arr);
+            while(arr[rightChar] > 1){
+                char leftChar = s.charAt(low);
+                arr[leftChar]--;
                 low++;
-                maxFreq = maxFreq(arr);
+//                maxFreq = maxFreq(arr);
+
             }
-
-
-            int len = high-low+1;
-            maxLen = Math.max(maxLen,len);
+            maxLen = Math.max(maxLen,high-low+1);
         }
 
         if(maxLen == -1) return 0;
@@ -60,13 +62,47 @@ class LongestSubstringWithoutRepetition {
         return maxLen;
     }
 
-    public static int maxFreq(int[] arr){
-        int maxFreq= 0;
-        for(int ele:arr){
-            if(maxFreq < ele){
-                maxFreq = ele;
-            }
-        }
-        return maxFreq;
-    }
+//    public static int longestSubstringWithoutRepetition(String s){
+//        int low = 0;
+//        int maxLen = -1;
+//
+////        Approach 2: Using HashMap
+//        HashMap<String, Integer> map = new HashMap<>();
+//
+//        for (int high = 0; high < s.length(); high++) {
+//            map.put(String.valueOf(s.charAt(high)), map.getOrDefault(String.valueOf(s.charAt(high)), 0) + 1);
+//            int windowSize = high - low + 1;
+//
+//            while (map.size() < windowSize) {
+//                map.put(String.valueOf(s.charAt(low)), map.getOrDefault(String.valueOf(s.charAt(low)), 0) - 1);
+//                if (map.getOrDefault(String.valueOf(s.charAt(low)), 0) == 0) {
+//                    map.remove(String.valueOf(s.charAt(low)));
+//                }
+//                low++;
+//                windowSize = high - low + 1;
+//
+//            }
+//
+//            int len = high - low + 1;
+//            maxLen = Math.max(maxLen, len);
+//        }
+//        if(maxLen == -1) return 0;
+//
+//        return maxLen;
+//    }
+
+
+
+
+//    public static int maxFreq(int[] arr){
+//        int maxFreq= 0;
+//        for(int ele:arr){
+//            if(maxFreq < ele){
+//                maxFreq = ele;
+//            }
+//        }
+//        return maxFreq;
+//    }
 }
+
+
