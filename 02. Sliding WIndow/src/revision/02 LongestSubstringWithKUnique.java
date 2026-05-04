@@ -41,7 +41,7 @@ class LongestSubstringWithKUnique {
  public static int longestSubstringWithKUnique(String s, int k){
   //declaring necessary variables
   int low = 0;
-  int maxLen = Integer.MIN_VALUE;
+  int maxLen = -1;
 
   // HashMap to maintain the count of the distinct keys
   HashMap<String,Integer> map = new HashMap<>();
@@ -65,7 +65,7 @@ class LongestSubstringWithKUnique {
     }
   }
 
-  if(maxLen == Integer.MIN_VALUE){
+  if(maxLen == -1){
    return -1;
   }
   return maxLen;
