@@ -34,9 +34,10 @@ class LongestRepeatingCharacterReplacement {
         System.out.println("Output 2: " + longestRepeatingCharacterReplacement(s2,k2));
     }
 
-    public static int longestRepeatingCharacterReplacement(String s, int k){
+    public static int longestRepeatingCharacterReplacement(String s, int k) {
         int low = 0;
         int maxLen = -1;
+        int maxFreq = 0;
 
         int[] arr = new int[255];
 
@@ -44,33 +45,23 @@ class LongestRepeatingCharacterReplacement {
             char rightChar = s.charAt(high);
             arr[rightChar]++;
 
-            int len = high-low+1;
-            int maxFreq = maxFreq(arr);
-            int diff = len - maxFreq;
+            // Step 1: Update maxFreq in O(1) time
+            maxFreq = Math.max(maxFreq, arr[rightChar]);
 
-            while(diff > k){
+            // Step 2: The window is invalid if (total characters - maxFreq > k)
+            // We use 'if' instead of 'while' because the window only grows by 1 at a time
+            if ((high - low + 1) - maxFreq > k) {
                 char leftChar = s.charAt(low);
                 arr[leftChar]--;
                 low++;
-
-                len = high-low+1;
-                maxFreq = maxFreq(arr);
-                diff = len - maxFreq;
+                // Note: We don't re-calculate maxFreq here.
+                // The algorithm still works because we only care about beating our "best" maxFreq.
             }
-            maxLen = Math.max(maxLen, high-low+1);
+
+            // Step 3: Update max length
+            maxLen = Math.max(maxLen, high - low + 1);
         }
         if(maxLen==-1) return 0;
         return maxLen;
-    }
-
-    public static int maxFreq(int[] array){
-        int maxFreq = 0;
-
-        for(int num:array){
-            if(maxFreq < num){
-                maxFreq = num;
-            }
-        }
-        return maxFreq;
     }
 }
