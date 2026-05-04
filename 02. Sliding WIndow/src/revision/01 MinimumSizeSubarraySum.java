@@ -21,10 +21,43 @@ package revision;
 
 class MinimumSizeSubarraySum {
     public static void main(String[] args){
+        int[] array1 = {2,3,1,2,4,3};
+        int target1 = 7;
 
+        int[] array2 = {1,4,4};
+        int target2= 4;
+
+        int[] array3 = {1,1,1,1,1,1,1,1};
+        int target3=11;
+
+        System.out.println("Output 1: " + minimumSizeSubarraySum(array1,target1));
+        System.out.println("Output 2: " + minimumSizeSubarraySum(array2,target2));
+        System.out.println("Output 3: " + minimumSizeSubarraySum(array3,target3));
     }
 
     public static int minimumSizeSubarraySum(int[] array, int target){
-        return 0;
+        //necessary variable
+        int low = 0;
+        int minLen = Integer.MAX_VALUE;
+        int sum = 0;
+
+        for (int high = 0; high < array.length; high++) {
+            sum += array[high];
+
+            // check if the sum is greater or equals to target if yes
+              // 1. save the len and compare with minLen
+              // 2. increase the low pointer index and remove the early pointer value from the sum and check again
+            while(sum >= target){
+                int len = high - low + 1;
+                minLen = Math.min(minLen,len);
+                low++;
+                sum = sum - array[low - 1];
+            }
+        }
+
+        if(minLen == Integer.MAX_VALUE){
+            return 0;
+        }
+        return minLen;
     }
 }
