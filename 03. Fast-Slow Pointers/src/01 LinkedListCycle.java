@@ -43,7 +43,7 @@ class ListNode {
     }
 }
 
-public class LinkedListCycle {
+class LinkedListCycle {
     public static void main(String[] args){
         // Manual test setup for Example 1: [3, 2, 0, -4] pos = 1
 //        ListNode head = new ListNode(3);
