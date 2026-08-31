@@ -10,7 +10,7 @@
 //Explanation: The subarray is [1] = 1
 
 class MinSumSubArray {
-    public static int minProduct(int[] nums) {
+    public static int minSum(int[] nums) {
 //        for the 1st element the 1st element is the best ending and the result itself
         int best_ending = nums[0];
         int res = nums[0];
@@ -30,8 +30,8 @@ class MinSumSubArray {
         int[] nums1 = {3,-4, 2,-3,-1, 7,-5};
         int[] nums2 = {2, 6, 8, 1, 4};
 
-        System.out.println("Output 1: " + minProduct(nums1));
-        System.out.println("Output 2: " + minProduct(nums2));
+        System.out.println("Output 1: " + minSum(nums1));
+        System.out.println("Output 2: " + minSum(nums2));
     }
 }
 
