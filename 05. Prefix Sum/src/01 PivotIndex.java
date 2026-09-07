@@ -53,7 +53,6 @@ class PivotIndex {
         for(int i=1;i<nums.length;i++){
             left += nums[i-1];
             int right = sum-left-nums[i];
-
             if(left == right){
                 return i;
             }
