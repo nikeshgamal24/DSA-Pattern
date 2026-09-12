@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="230319a1-ffc6-406b-a51e-7863bc4be251" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../06. Merge Interval/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../06. Merge Interval/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../06. Merge Interval/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../06. Merge Interval/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../06. Merge Interval/06. Merge Interval.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MergeIntervals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../05. Prefix Sum/src/04 FindMaxLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/../05. Prefix Sum/src/04 FindMaxLength.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InsertIntevalAndMerge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +23,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3J9ipIhCmGV1gINuo5mtr1zXCjd" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -45,6 +37,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.InsertIntevalAndMerge.executor": "Run",
     "Application.MergeInterval.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -57,15 +50,24 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/nikesh-gamal/Desktop/DSA-Pattern/06 Merge Intervals",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/home/nikesh-gamal/Desktop/DSA-Pattern/06. Merge Intervals/src/Main.java",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.InsertIntevalAndMerge">
+    <configuration name="InsertIntevalAndMerge" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InsertIntevalAndMerge" />
+      <module name="06. Merge Intervals" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MergeInterval" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MergeInterval" />
       <module name="06. Merge Intervals" />
@@ -75,6 +77,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InsertIntevalAndMerge" />
         <item itemvalue="Application.MergeInterval" />
       </list>
     </recent_temporary>
