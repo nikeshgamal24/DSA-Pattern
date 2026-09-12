@@ -52,6 +52,7 @@ class FindMaxLength {
 
         System.out.println("Output 1: " + findMaxLength(nums1));
         System.out.println("Output 2: " + findMaxLength(nums2));
+        System.out.println("Output 3: " + findMaxLength(nums3));
         System.out.println("Output 4: " + findMaxLength(nums4));
     }
 }
